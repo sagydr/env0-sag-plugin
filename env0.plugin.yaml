@@ -9,4 +9,4 @@ run:
   exec: |
     bucketName=`cat "${inputs.plan}" | jq -r ".variables.bucket_name.value"`
     echo "$bucketName"
-    [[ "$bucketName" == env0* ]] || { echo "bucket name does not start with env0"; exit 1; }
+    if [[ ! "$bucketName" == "env0"* ]]; then exit 1; fi
