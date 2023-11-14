@@ -10,5 +10,6 @@ inputs:
 
 run:
   exec: |
-    pwd && ls && echo "${inputs.plan_path}" && cat "${inputs.plan}"
-#    chmod +x run.sh && ./run.sh && echo "${inputs.plan_path}" && echo "${inputs.plan}"
+    pwd && ls && echo "${inputs.plan_path}"
+    bucketName = `cat "${inputs.plan}" | jq -r ".variables.bucket_name.value"`
+    [[ "$bucketName" == env0* ]] || { echo "bucket name does not start with env0"; exit 1; }
