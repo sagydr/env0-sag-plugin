@@ -7,6 +7,6 @@ inputs:
 
 run:
   exec: |
-    bucketName=`cat "${inputs.plan}" | jq -r ".variables.bucket_name.value"`
+    bucketName=$(cat $ENV0_TF_PLAN_JSON | jq -r ".variables.bucket_name.value")
     echo "$bucketName"
     if [[ ! "$bucketName" == "env0"* ]]; then exit 1; fi
