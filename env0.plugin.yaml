@@ -10,4 +10,5 @@ inputs:
 
 run:
   exec: |
-    chmod +x run.sh && ./run.sh && echo "${inputs.plan_path}" && echo "${inputs.plan}"
+    ls && echo "${inputs.plan_path}" && echo "${inputs.plan}"
+#    chmod +x run.sh && ./run.sh && echo "${inputs.plan_path}" && echo "${inputs.plan}"
