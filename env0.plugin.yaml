@@ -2,14 +2,10 @@ name: Sag-Plugin-Bucket-Name
 icon: https://avatars.githubusercontent.com/u/9664064?v=4
 inputs:
   plan:
-    description: PR Plan as JSON
-    required: true
-  plan_path:
-    description: JSON path
+    description: PATH to JSON PR Plan
     required: true
 
 run:
   exec: |
-    pwd && ls && echo "${inputs.plan_path}"
     bucketName=`cat "${inputs.plan}" | jq -r ".variables.bucket_name.value"`
     [[ "$bucketName" == env0* ]] || { echo "bucket name does not start with env0"; exit 1; }
