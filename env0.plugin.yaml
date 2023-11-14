@@ -4,7 +4,10 @@ inputs:
   plan:
     description: PR Plan as JSON
     required: true
+  plan_path:
+    description: JSON path
+    required: true
 
 run:
   exec: |
-    echo "${inputs.plan}"
+    chmod +x run.sh && ./run.sh && echo "${inputs.plan_path}" && echo "${inputs.plan}"
