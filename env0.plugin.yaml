@@ -1,4 +1,4 @@
-name: OPA
+name: Sag-Plugin-Bucket-Name
 icon: https://avatars.githubusercontent.com/u/9664064?v=4
 inputs:
   plan:
