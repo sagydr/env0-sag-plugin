@@ -1,0 +1,10 @@
+name: OPA
+icon: https://avatars.githubusercontent.com/u/9664064?v=4
+inputs:
+  plan:
+    description: PR Plan as JSON
+    required: true
+
+run:
+  exec: |
+    echo "${inputs.plan}"
