@@ -10,4 +10,4 @@ run:
     #!/bin/bash
     bucketName=$(cat $ENV0_TF_PLAN_JSON | jq -r ".variables.bucket_name.value")
     echo $bucketName
-    if [[ ! $bucketName == "env0"* ]]; then echo "error" && exit 1; fi
+    if [[ ! "env4" == "env0"* ]]; then echo "error" && exit 1; fi
