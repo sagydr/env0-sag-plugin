@@ -9,5 +9,4 @@ run:
   exec: |
     bucketName=$(cat $ENV0_TF_PLAN_JSON | jq -r ".variables.bucket_name.value")
     echo $bucketName
-    echo $(ps -p $$)
     if [[ ! $bucketName =~ ^env0 ]]; then echo "bucket name must start with env0" && exit 1; fi
